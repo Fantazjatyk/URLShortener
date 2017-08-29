@@ -1,0 +1,235 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-07-04, 23:30:33
+    Author     : Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
+*/
+
+#shorten{
+    background:#4b5076;
+    padding-top: 8em;
+
+}
+
+main > section{
+    padding: 3em 0 3em 0;
+        width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body > footer{
+text-align: center;
+padding: 1em;
+font-size: small;
+background: whitesmoke;
+color:grey;
+}
+.bottom{
+    height:40%;
+    width:100%;
+}
+body, html{
+    width:100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.shorten-input {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#shorten > div{
+    display: inline-block;
+    width:500px;
+}
+.shorten-input input, #shorten_result input{
+    border: none;
+    height: 50px;
+    padding: 1em;
+    /* margin: 1em; */
+}
+.shorten-button{
+    background: #ed217c;
+    color:white;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#shorten_result{
+        width: 100%;
+    padding: 0;
+    margin: 20px auto 0;
+    /* margin: 3em; */
+        width: 100%;
+    padding: 0;
+    margin: 20px auto 0;
+    border: 1px solid;
+    /* margin: 3em; */
+    border-color: #ed217c;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+#shorten_result input{
+      width: 100%;
+    box-sizing: border-box;
+    border: 1px solid;
+    /* border-color: #ed217c; */
+    /* background: #ed217c; */
+    border-color: whitesmoke;
+    border-radius: 5px;
+    border: none;
+    color: #ed217c;
+    font-weight: bold;
+    background: #e8e8e8;
+}
+
+#shorten_result span{
+       padding: 0 0 0.5em;
+    color:whitesmoke;
+    display: block;
+}
+
+#stats{
+    flex-direction: column;
+}
+
+#stats > div{
+    text-align: center;
+        margin-top: 1em;
+}
+
+
+#stats > div span:nth-child(2){
+    display: block !important;
+}
+
+.bottom section{
+    margin: 1em;
+}
+.counter{
+      font-size: 3.5em;
+    background: #ed217c;
+    display: inline-block !important;
+    padding: 0.15em;
+    margin: .25em;
+    color: white;
+}
+
+#analyze label, #analyze input[type='text']{
+    display: block;
+
+}
+
+#analyze{
+    background: ghostwhite;
+}
+
+
+#analyze input[type='url']{
+        /* line-height: 2.5em; */
+    /* height: 2em; */
+    margin: 0;
+    font-size: 1em;
+    border: none;
+    background: white;
+    padding: 0;
+    border: 1px solid;
+    border-color: #ed217c;
+    padding: .5em;
+}
+
+.menu{
+    background: white;
+    position: fixed;
+    left:0;
+    right: 0;
+
+}
+
+.menu ul{
+        display: inline-block;
+}
+
+.menu ul, .menu li{
+    padding: 0;
+    margin: 0;
+}
+
+.menu .author{
+    float: right;
+}
+
+.menu .fix{
+    width:1000px;
+    margin: 0 auto;
+}
+
+.menu li, .menu .author{
+    padding: 1em;
+    display: inline-block;
+}
+
+.menu li a, .menu .author{
+    text-decoration: none;
+    color: black;
+  
+}
+#analyze input[type='submit']{
+    font-size: 1.5em;
+    margin: 0;
+    /* padding: 0; */
+    /* height: 2em; */
+    border: none;
+    background: #ed217c;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border: 1px solid;
+    border-color: #ed217c;
+    padding: .5em;
+    display: inline-block;
+}
+#analyze header{
+   font-size: 1.5em;
+   padding: .5em;
+}
+
+#analyze .inputs{
+    padding: 1em;
+}
+#stats .text{
+      font-size: 1.75em;
+}
+
+.menu a:hover{
+    color:#ed217c;
+}
+.shorten-button:hover{
+    background: #bd1a63;
+}
+.shorten-input input[type=text]{
+    padding: 0;
+    /* margin: 0; */
+    flex: 1;
+        padding-left: 1em;
+        outline: none;
+        background: whitesmoke;
+            border-radius: 5px 0px 0px 5px;
+}
+
+.top first-plane input[type=text]:focus{
+    
+}
+
+
+
+.shorten-input input{
+    font-weight: bold;
+}

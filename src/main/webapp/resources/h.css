@@ -1,0 +1,72 @@
+ul{
+  display:inline-block;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.click-details{
+  list-style:none;
+  padding:0;
+  margin:0.5em;
+  display:none;
+   border-top:1px solid silver;
+  background: whitesmoke;
+ 
+}
+.click-record{
+position:relative;
+width:300px;
+background:whitesmoke;
+border:1px solid silver;
+margin:0.5em;
+padding:0.5em;
+    border-radius: 5px;
+}
+
+.click-record ul{
+  padding:0.5em;
+}
+
+
+
+.header{
+  position:relative;
+}
+
+.click-record .header span{
+    margin-right:0.5em;
+    font-size:large;
+}
+.click-record button{
+     background: none;
+    position: absolute;
+    border: none;
+    right: 0;
+    background: white;
+    color: #ed217c;
+    font-size: medium;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid;
+}
+
+
+table{
+text-align: center;
+border-collapse: collapse;
+}
+
+
+table th{
+  padding: .5em !important;
+  background: whitesmoke;
+  color:grey;
+}
+table th, table td{
+      border: 1px solid silver;
+      padding: 0.5em;
+}
+.click-record button:hover{
+      background: #ed217c !important;
+    color: white;
+}

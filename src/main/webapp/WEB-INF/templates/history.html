@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>History</title>
+    <link th:href="@{/resources/h.css}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script th:src="@{/resources/h.js(ver=0.1)}">
+
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Locale</th>
+            <th>IP adress</th>
+            <th>Source</th>
+        </tr>
+        <tr th:each="click : ${clicks}">
+            <td th:text="${click.time}"></td>
+            <td th:text="${click.locale}"></td>
+            <td th:text="${click.ip}"></td>
+            <td th:text="${click.referer}"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

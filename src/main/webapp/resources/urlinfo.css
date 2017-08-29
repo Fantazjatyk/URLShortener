@@ -1,0 +1,136 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-07-06, 16:09:25
+    Author     : Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
+*/
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background: whitesmoke;
+}
+
+.button{
+    background: transparent;
+    padding: 0.5em;
+    border: 1px solid transparent;
+    color: grey;
+    border-radius: 5px;
+    font-style: normal;
+    text-decoration: none;
+    font-size: large;
+    outline: none;
+    display: block;
+    width: 100%;
+ 
+}
+
+.button:hover{
+    background:whitesmoke;
+      color: #ed217c;
+}
+   
+#swap table{
+    width:100%;
+}
+ 
+   .buttons{
+            background:whitesmoke;
+    padding: 0.5em 0em 0.5em 0;
+    width: 200px;
+    
+   }
+
+body, html{
+    height: 100%;
+    width:100%;
+}
+#wrapper > main{
+       display: flex;
+    height: 100%;
+    flex:1;
+    overflow:auto;
+}
+
+#content{
+ flex: 1;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#content > footer{
+       padding: .75em;
+    color: gray;
+    /* margin-top: 1em; */
+    font-size: small;
+    border-color: #dcdcdc;
+    border: 1px solid;
+    text-align: center;
+    border-color: #dcdcdc;
+    background: white;
+}
+#content #swap{
+        background: white;
+    border: 1px solid;
+    flex:1;
+    border-color: #dcdcdc;
+    padding: 1em;
+}
+
+#nav{
+    border-right: 2px solid;
+    border-color: #dcdcdc;
+    background: white;
+}
+#wrapper{
+        display: flex;
+    flex-direction: column;
+        min-height: 100%;
+}
+
+
+#wrapper > header{
+    background: #4b5076;
+    font-size: large;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+#wrapper > header span:first-child{
+    font-size: x-large;
+    display: block;
+}
+
+#wrapper > nav{
+    padding: .75em;
+background: #3c405f;
+}
+
+#wrapper > nav a{
+      color: silver;
+    border: 1px solid;
+
+    padding: .5em;
+    /* font-size: smaller; */
+        font-size: 0.9em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#wrapper > nav a:hover{
+    color: whitesmoke;
+}
+
+
+#wrapper > header span:nth-child(2){
+    font-size: smaller;
+}
+#wrapper > header, #wrapper .global{
+        padding: 1em;
+}

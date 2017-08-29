@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>URL info</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/resources/urlinfo.css}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script th:src="@{/resources/urlinfo.js(ver=0.1)}"></script>
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <nav>
+            <a th:href="@{/}">URLShortener</a>
+        </nav>
+        <header>
+            <span>Analyze</span>
+            <span th:text="${shortFullUrl}" />
+        </header>
+        <main>
+            <div id="nav" class="buttons">
+                <button id="overview" class="button">Overview</button>
+                <button id="history" class="button">History</button>
+            </div>
+            <div id="content">
+                <div id="swap">
+                </div>
+                <footer>@2017 Michał Szymański</footer>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

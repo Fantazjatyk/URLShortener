@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>URLShortener</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/resources/main.css}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script th:src="@{/resources/main.js(ver=0.1)}"></script>
+</head>
+
+<body>
+    <nav class="menu">
+        <div class="fix">
+            <ul>
+                <li><a href="#shorten">Shorten link</a></li>
+                <li><a href="#analyze">Analyze link</a></li>
+                <li><a href="#stats">Statistics</a></li>
+            </ul>
+            <a class="author" href="http://www.michal-szymanski.pl/">Author</a>
+        </div>
+    </nav>
+    <main>
+        <section id="shorten">
+            <div>
+                <div class="shorten-input">
+                    <input type="text" placeholder="Paste your link here" id="shorten_input" class="shorten-input" name="url" />
+                    <input type="submit" value="shorten" id="shorten_button" class="shorten-button" />
+                </div>
+                <div id="shorten_result"><span>Your result:</span> <input type="text" disabled/></div>
+            </div>
+        </section>
+
+        <section id="analyze">
+            <div>
+                <form th:action="@{global/goto_analyze}">
+                    <header>Analyze your shortened link:</header>
+                    <div class="inputs">
+                        <input name="url" type="url" />
+                        <input type="submit" />
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="stats">
+            <div>
+                <span id="totalUrls" class="counter" th:text="${totalUrls}" />
+                <span class="text">URLS SHORTENED</span>
+            </div>
+            <div>
+                <span id="totalClicks" class="counter" th:text="${totalClicks}" />
+                <span class="text">CAPTURED CLICKS</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        @2017 Michał Szymański
+    </footer>
+
+</body>
+
+</html>
