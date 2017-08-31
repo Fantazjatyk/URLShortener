@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -24,9 +24,7 @@
 package us.services;
 
 import java.math.BigInteger;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -35,20 +33,6 @@ import org.junit.Test;
  */
 public class UtilsTest {
 
-    public UtilsTest() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    /**
-     * Test of convertNumberToBase36 method, of class Utils.
-     */
     @Test
     public void testConvertNumberToBase36() {
         BigInteger number1 = BigInteger.valueOf(1226);

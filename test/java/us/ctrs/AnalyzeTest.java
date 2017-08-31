@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -25,7 +25,6 @@ package us.ctrs;
 
 import java.math.BigInteger;
 import javax.transaction.Transactional;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,7 +38,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import us.Conf;
+import us.TestConfiguration;
 import us.dao.WriteRepository;
 import us.services.Utils;
 
@@ -48,7 +47,7 @@ import us.services.Utils;
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @WebAppConfiguration
 @Transactional
 public class AnalyzeTest {
@@ -64,13 +63,6 @@ public class AnalyzeTest {
     BigInteger urlId;
 
     String url = "http://www.google.pl/" + System.currentTimeMillis();
-
-    public AnalyzeTest() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Before
     public void setUp() {

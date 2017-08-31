@@ -32,6 +32,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan("us")
-public class Conf {
+public class TestConfiguration {
 
 }

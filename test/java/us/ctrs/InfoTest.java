@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -25,7 +25,6 @@ package us.ctrs;
 
 import java.math.BigInteger;
 import javax.transaction.Transactional;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,7 +37,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import us.Conf;
+import us.TestConfiguration;
 import us.dao.WriteRepository;
 import us.services.Utils;
 
@@ -47,17 +46,10 @@ import us.services.Utils;
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @WebAppConfiguration
 @Transactional
 public class InfoTest {
-
-    public InfoTest() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Autowired
     WriteRepository write;
@@ -80,9 +72,6 @@ public class InfoTest {
 
     }
 
-    /**
-     * Test of analyze method, of class Info.
-     */
     @Test
     public void testInfo() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/analyze/" + Utils.convertNumberToBase36(urlId) + "/"))
@@ -90,9 +79,6 @@ public class InfoTest {
                 .andExpect(MockMvcResultMatchers.view().name("urlinfo"));
     }
 
-    /**
-     * Test of history method, of class Info.
-     */
     @Test
     public void testHistory() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/analyze/" + Utils.convertNumberToBase36(urlId) + "/history"))
@@ -100,12 +86,6 @@ public class InfoTest {
                 .andExpect(MockMvcResultMatchers.view().name("history"));
     }
 
-    /**
-     * Test of appendShortUrlId method, of class Info.
-     */
-    /**
-     * Test of overview method, of class Info.
-     */
     @Test
     public void testOverview() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/analyze/" + Utils.convertNumberToBase36(urlId) + "/overview"))

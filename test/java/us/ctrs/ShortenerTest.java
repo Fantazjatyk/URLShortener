@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -24,7 +24,6 @@
 package us.ctrs;
 
 import javax.transaction.Transactional;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,38 +37,29 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import us.Conf;
+import us.TestConfiguration;
 
 /**
  *
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @WebAppConfiguration
 @Transactional
 public class ShortenerTest {
-
-    public ShortenerTest() {
-    }
 
     MockMvc mvc;
 
     @Autowired
     WebApplicationContext ctx;
 
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Before
     public void setUp() {
         mvc = MockMvcBuilders.webAppContextSetup(ctx).build();
     }
 
-    /**
-     * Test of shorten method, of class Shortener.
-     */
     @Test
     public void testShorten_FAIL_REDIRECT() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/shorten?url=someurl")).andDo(MockMvcResultHandlers.print()).andExpect(MockMvcResultMatchers.status().is(302));

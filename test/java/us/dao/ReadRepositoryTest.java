@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Vector;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +37,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import us.Conf;
+import us.TestConfiguration;
 import us.model.Click;
 import us.model.ShortURL;
 
@@ -47,17 +46,10 @@ import us.model.ShortURL;
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @WebAppConfiguration
 @Transactional
 public class ReadRepositoryTest {
-
-    public ReadRepositoryTest() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     String url = "http://www.google.pl";
     BigInteger urlId;
@@ -86,18 +78,11 @@ public class ReadRepositoryTest {
     @Autowired
     ReadRepository read;
 
-    /**
-     * Test of getShortUrlOriginal method, of class ReadRepository.
-     */
     @Test
     public void testGetShortUrlOriginal() {
         assertEquals(url, read.getShortUrlOriginal(urlId.longValue()));
-
     }
 
-    /**
-     * Test of getUrlClicks method, of class ReadRepository.
-     */
     @Test
     public void testGetUrlClicks() {
         List<Click> click = read.getUrlClicks(urlId.longValue());
@@ -109,12 +94,6 @@ public class ReadRepositoryTest {
         assertNotNull(c.getId());
     }
 
-    /**
-     * Test of getTotalUrlsCount method, of class Read.
-     */
-    /**
-     * Test of getClicksCount method, of class ReadRepository.
-     */
     @Test
     public void testGetClicksCount_FALSE() {
         assertNotEquals(1, read.getClicksCount(urlId.longValue()).intValue());
@@ -125,37 +104,22 @@ public class ReadRepositoryTest {
         assertEquals(3, read.getClicksCount(urlId.longValue()).intValue());
     }
 
-    /**
-     * Test of getUniqueVisitorsCount method, of class Read.
-     */
-    /**
-     * Test of getShortUrlId method, of class ReadRepository.
-     */
     @Test
     public void testGetShortUrlId() {
         Long id = read.getShortUrlId(url);
         assertTrue(id > 0);
     }
 
-    /**
-     * Test of isURLExists method, of class ReadRepository.
-     */
     @Test
     public void testIsURLExists_String() {
         assertTrue(read.isURLExists(url));
     }
 
-    /**
-     * Test of isURLExists method, of class ReadRepository.
-     */
     @Test
     public void testIsURLExists_long() {
         assertTrue(read.isURLExists(urlId.longValue()));
     }
 
-    /**
-     * Test of getShortURL method, of class ReadRepository.
-     */
     @Test
     public void testGetShortURL() {
         ShortURL sUrl = read.getShortURL(urlId.longValue());
@@ -164,9 +128,6 @@ public class ReadRepositoryTest {
         assertEquals(sUrl.getOriginal(), url);
     }
 
-    /**
-     * Test of getAllURLs method, of class ReadRepository.
-     */
     @Test
     public void testGetAllURLs() {
         List<ShortURL> urls = read.getAllURLs();

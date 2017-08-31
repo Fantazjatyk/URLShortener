@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -23,7 +23,6 @@
  */
 package us.ctrs;
 
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,25 +35,18 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import us.Conf;
+import us.TestConfiguration;
 
 /**
  *
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @WebAppConfiguration
 public class MainTest {
 
-    public MainTest() {
-    }
-
     private MockMvc mvc;
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Autowired
     WebApplicationContext ctx;
@@ -65,9 +57,6 @@ public class MainTest {
                 .build();
     }
 
-    /**
-     * Test of index method, of class Main.
-     */
     @Test
     public void testIndex() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/"))

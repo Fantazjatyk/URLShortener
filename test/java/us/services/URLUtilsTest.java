@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -26,9 +26,7 @@ package us.services;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.servlet.http.HttpServletRequest;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -38,20 +36,6 @@ import org.mockito.Mockito;
  */
 public class URLUtilsTest {
 
-    public URLUtilsTest() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    /**
-     * Test of getRelativeURL method, of class URLUtils.
-     */
     @Test
     public void testGetRelativeURL() throws MalformedURLException {
         String url = "http://michal-szymanski.pl/index";
@@ -60,9 +44,6 @@ public class URLUtilsTest {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of appendToBase method, of class URLUtils.
-     */
     @Test
     public void testAppendToBase() {
         HttpServletRequest rq = Mockito.mock(HttpServletRequest.class);
@@ -76,12 +57,6 @@ public class URLUtilsTest {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of getBaseURL method, of class URLUtils.
-     */
-    /**
-     * Test of appendToURL method, of class URLUtils.
-     */
     @Test
     public void testAppendToURL() throws MalformedURLException {
         String url = "http://michal-szymanski.pl/index";

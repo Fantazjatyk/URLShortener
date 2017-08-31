@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -26,7 +26,6 @@ package us.ctrs;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import javax.transaction.Transactional;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
 import org.junit.Before;
@@ -44,7 +43,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import us.Conf;
+import us.TestConfiguration;
 import us.dao.ReadRepository;
 import us.model.ShortURL;
 
@@ -53,19 +52,12 @@ import us.model.ShortURL;
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @Transactional
 @WebAppConfiguration
 public class GlobalTest {
 
-    public GlobalTest() {
-    }
-
     MockMvc mvc;
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Autowired
     WebApplicationContext ctx;
@@ -75,9 +67,6 @@ public class GlobalTest {
         mvc = MockMvcBuilders.webAppContextSetup(ctx).build();
     }
 
-    /**
-     * Test of getTotalClicks method, of class Global.
-     */
     @Test
     public void testGetTotalClicks() throws Exception {
 
@@ -93,9 +82,6 @@ public class GlobalTest {
 
     }
 
-    /**
-     * Test of getTotalUrls method, of class Global.
-     */
     @Test
     public void testGetTotalUrls() throws Exception {
 
@@ -107,9 +93,6 @@ public class GlobalTest {
         assertTrue(longResult > 0);
     }
 
-    /**
-     * Test of getAllUrls method, of class Global.
-     */
     @Autowired
     ObjectMapper mapper;
 
@@ -131,7 +114,4 @@ public class GlobalTest {
 
     }
 
-    /**
-     *
-     */
 }

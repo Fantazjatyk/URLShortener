@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -27,7 +27,6 @@ import java.math.BigInteger;
 import java.util.Vector;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,24 +36,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import us.Conf;
+import us.TestConfiguration;
 
 /**
  *
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Conf.class})
+@ContextConfiguration(classes = {TestConfiguration.class})
 @WebAppConfiguration
 @Transactional
 public class GlobalRepositoryTest {
-
-    public GlobalRepositoryTest() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Autowired
     WriteRepository write;
@@ -82,17 +74,11 @@ public class GlobalRepositoryTest {
         write.saveClickData(id.longValue(), rq);
     }
 
-    /**
-     * Test of getTotalUrlsCount method, of class GlobalRepository.
-     */
     @Test
     public void testGetTotalUrlsCount() {
         assertTrue(global.getTotalClicksCount() > 5);
     }
 
-    /**
-     * Test of getTotalClicksCount method, of class GlobalRepository.
-     */
     @Test
     public void testGetTotalClicksCount() {
         assertTrue(global.getTotalUrlsCount() > 2);
