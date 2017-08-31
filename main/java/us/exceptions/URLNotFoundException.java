@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  *
  * @author Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com
  */
-@ResponseStatus(value=HttpStatus.NOT_FOUND)
-public class URLNotFoundException extends RuntimeException{
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class URLNotFoundException extends RuntimeException {
 
 }

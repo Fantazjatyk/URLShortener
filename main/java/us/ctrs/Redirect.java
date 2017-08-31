@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -31,10 +31,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import us.dao.WriteRepository;
 import us.dao.ReadRepository;
-import us.exceptions.URLNotFoundException;
-import us.model.ShortURL;
+import us.dao.WriteRepository;
 import us.services.Utils;
 
 /**

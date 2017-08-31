@@ -23,8 +23,6 @@
  */
 package us.model;
 
-import java.sql.Timestamp;
-import java.time.ZonedDateTime;
 import java.util.Locale;
 
 /**

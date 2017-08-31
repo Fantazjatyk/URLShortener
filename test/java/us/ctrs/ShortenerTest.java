@@ -24,11 +24,9 @@
 package us.ctrs;
 
 import javax.transaction.Transactional;
-import javax.ws.rs.core.MediaType;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

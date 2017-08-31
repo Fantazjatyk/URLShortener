@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -24,21 +24,17 @@
 package us.dao;
 
 import java.math.BigInteger;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import us.dao.mapping.ClickMapper;
 import us.dao.mapping.ShortURLMapper;
 import us.model.Click;
 import us.model.ShortURL;
-import us.services.Utils;
 
 /**
  *
@@ -81,8 +77,6 @@ public class ReadRepository {
             }
         }, clickMapper);
     }
-
-
 
     public BigInteger getClicksCount(Long id) {
         String s = this.getShortUrlOriginal(id);

@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -30,12 +30,10 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.DataSource;
-import javax.transaction.TransactionManager;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -75,12 +73,12 @@ public class CommonBeans {
     @Bean
     public Properties properties() {
         Properties properties = new Properties();
-        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("dao.properties");
-        try {
+        try (InputStream stream = this.getClass().getClassLoader().getResourceAsStream("dao.properties")) {
             properties.load(stream);
         } catch (IOException ex) {
             Logger.getLogger(CommonBeans.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return properties;
     }
 }

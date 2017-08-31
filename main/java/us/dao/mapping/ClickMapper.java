@@ -29,26 +29,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.springframework.http.HttpHeaders;
-import org.springframework.jdbc.core.RowMapper;
-import sun.util.locale.LocaleUtils;
-import us.model.Click;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
-import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
+import us.model.Click;
 
 /**
  *

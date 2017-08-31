@@ -23,11 +23,8 @@
  */
 package us.model;
 
-import java.math.BigInteger;
-import java.net.URL;
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2017 Michał Szymański, kontakt: michal.szymanski.aajar@gmail.com.
@@ -25,12 +25,10 @@ package us.conf;
 
 import org.apache.commons.lang.CharEncoding;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.ViewResolver;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -48,13 +46,12 @@ public class ThymeleafBeans implements ApplicationContextAware {
     @Bean
     public ThymeleafViewResolver resolver() {
         ThymeleafViewResolver r = new ThymeleafViewResolver();
-        // r.setStaticVariables(variables);
         r.setTemplateEngine(engine());
         r.setCharacterEncoding(CharEncoding.UTF_8);
         return r;
     }
 
-    public SpringResourceTemplateResolver templateResolver() {
+    private SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver r = new SpringResourceTemplateResolver();
         r.setApplicationContext(ctx);
         r.setPrefix("/WEB-INF/templates/");
@@ -64,7 +61,7 @@ public class ThymeleafBeans implements ApplicationContextAware {
         return r;
     }
 
-    public SpringTemplateEngine engine() {
+    private SpringTemplateEngine engine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(templateResolver());
         engine.setEnableSpringELCompiler(true);
